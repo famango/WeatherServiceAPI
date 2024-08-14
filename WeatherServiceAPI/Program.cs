@@ -1,3 +1,7 @@
+// <copyright file="Program.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
 using Microsoft.OpenApi.Models;
 using Serilog;
 using WeatherServiceAPI.Models;
@@ -9,8 +13,8 @@ builder.Services.Configure<OpenMeteoClientSettings>(builder.Configuration.GetSec
 builder.Services.Configure<WeatherForecastSettings>(builder.Configuration.GetSection("WeatherForecast"));
 
 // Add services to the container.
-
 builder.Services.AddControllers();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 
