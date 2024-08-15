@@ -15,7 +15,7 @@ namespace WeatherServiceAPI.Services
     /// <summary>
     /// Class MongoDBService for managing interaction with Database.
     /// </summary>
-    public class MongoDBService
+    public class MongoDBService : IMongoDBService
     {
         private readonly ILogger logger;
         private readonly IMongoCollection<WeatherForecast> weatherForecastCollection;
@@ -77,15 +77,15 @@ namespace WeatherServiceAPI.Services
         /// <returns>Return <see cref="City"/> instance or null.</returns>
         public async Task<City?> GetCityByNameAsync(string name)
         {
-            this.logger.LogInformation("Searching {Name} city in DB", name);
+            this.logger.LogInformation("Searching '{Name}' city in DB", name);
             FilterDefinition<City> filter = Builders<City>.Filter.Where(x => x.SearchedByName.Equals(name.ToUpper()));
             var result = await this.citiesCollection.Find(filter).FirstOrDefaultAsync();
             if (result == null)
             {
-                this.logger.LogInformation("Searching {Name} city in DB. City not found!", name);
+                this.logger.LogInformation("Searching '{Name}' city in DB. City not found!", name);
             }
 
-            this.logger.LogInformation("Searching {Name} city in DB. City was found.", name);
+            this.logger.LogInformation("Searching '{Name}' city in DB. City was found.", name);
             return result;
         }
 

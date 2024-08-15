@@ -2,10 +2,13 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
+#pragma warning disable SA1200 // Using directives should be placed correctly
 using Microsoft.OpenApi.Models;
 using Serilog;
+using WeatherServiceAPI.Extensions;
 using WeatherServiceAPI.Models;
 using WeatherServiceAPI.Services;
+#pragma warning restore SA1200 // Using directives should be placed correctly
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.Configure<MongoDBSettings>(builder.Configuration.GetSection("MongoDB"));
@@ -18,22 +21,29 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 
-var logger = new LoggerConfiguration()
+var loggerConfig = new LoggerConfiguration()
     .ReadFrom.Configuration(builder.Configuration)
     .Enrich.FromLogContext()
     .CreateLogger();
 builder.Logging.ClearProviders();
-builder.Logging.AddSerilog(logger);
+builder.Logging.AddSerilog(loggerConfig);
 builder.Services.AddSwaggerGen(options =>
 {
     options.SwaggerDoc("v1", new OpenApiInfo { Title = "Weather Service API", Version = "v1" });
 });
-builder.Services.AddScoped<WeatherForecastService>();
-builder.Services.AddScoped<OpenMeteoClientService>();
-builder.Services.AddSingleton<MongoDBService>();
+builder.Services.AddScoped<IWeatherForecastService, WeatherForecastService>();
+builder.Services.AddScoped<IOpenMeteoClientService, OpenMeteoClientService>();
+builder.Services.AddSingleton<IMongoDBService, MongoDBService>();
 builder.Services.AddHttpClient();
 
 var app = builder.Build();
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler();
+}
+
+var logger = app.Services.GetRequiredService<ILoggerFactory>();
+app.ConfigureExceptionHandler(logger);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -51,4 +61,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+#pragma warning disable S6966 // Awaitable method should be used
 app.Run();
+#pragma warning restore S6966 // Awaitable method should be used

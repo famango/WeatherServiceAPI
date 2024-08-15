@@ -10,10 +10,10 @@ namespace WeatherServiceAPI.Services
     /// <summary>
     /// Class WeatherForecastService.
     /// </summary>
-    public class WeatherForecastService : IWeatherForecast
+    public class WeatherForecastService : IWeatherForecastService
     {
-        private readonly OpenMeteoClientService openMeteoClientService;
-        private readonly MongoDBService mongoDBService;
+        private readonly IOpenMeteoClientService openMeteoClientService;
+        private readonly IMongoDBService mongoDBService;
         private readonly int weatherForecastDbExpiresMintues;
 
         /// <summary>
@@ -21,12 +21,12 @@ namespace WeatherServiceAPI.Services
         /// </summary>
         /// <param name="openMeteoClientService">Service class OpenMeteoClientService.</param>
         /// <param name="mongoDBService">Service class MongoDBService.</param>
-        /// <param name="weatherForecastSettgins">Service class WeatherForecastSettings of type IOptions.</param>
-        public WeatherForecastService(OpenMeteoClientService openMeteoClientService, MongoDBService mongoDBService, IOptions<WeatherForecastSettings> weatherForecastSettgins)
+        /// <param name="weatherForecastSettings">Service class WeatherForecastSettings of type IOptions.</param>
+        public WeatherForecastService(IOpenMeteoClientService openMeteoClientService, IMongoDBService mongoDBService, IOptions<WeatherForecastSettings> weatherForecastSettings)
         {
             this.openMeteoClientService = openMeteoClientService;
             this.mongoDBService = mongoDBService;
-            this.weatherForecastDbExpiresMintues = weatherForecastSettgins.Value.WeatherForecastDbExpiresMintues;
+            this.weatherForecastDbExpiresMintues = weatherForecastSettings.Value.WeatherForecastDbExpiresMintues;
         }
 
         /// <summary>

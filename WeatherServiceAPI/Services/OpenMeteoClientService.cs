@@ -15,7 +15,7 @@ namespace WeatherServiceAPI.Services
     /// <summary>
     /// Class OpenMeteoClientService.
     /// </summary>
-    public class OpenMeteoClientService
+    public class OpenMeteoClientService : IOpenMeteoClientService
     {
         private readonly ILogger logger;
         private readonly IHttpClientFactory httpClientFactory;
@@ -54,7 +54,7 @@ namespace WeatherServiceAPI.Services
         /// <returns><see cref="City"/>.</returns>
         public async Task<City?> GetCityByNameAsync(string city)
         {
-            this.logger.LogInformation("Fetching {City} city from OpenMeteo Geocoding API.", city);
+            this.logger.LogInformation("Fetching '{City}' city from OpenMeteo Geocoding API.", city);
 
             // Composing parameterize request URL for Geocoding API endpoint.
             var builder = new UriBuilder(this.geocodingApiUrl);
@@ -77,12 +77,12 @@ namespace WeatherServiceAPI.Services
                     var cityModel = geocoding.Cities[0];
                     cityModel.SearchedByName = city.ToUpper();
 
-                    this.logger.LogInformation("Fetching {City} city from OpenMeteo Geocoding API. City was found: {CityModel}", city, cityModel);
+                    this.logger.LogInformation("Fetching '{City}' city from OpenMeteo Geocoding API. City was found: {CityModel}", city, cityModel);
                     return cityModel;
                 }
             }
 
-            this.logger.LogInformation("Fetching {City} city from OpenMeteo Geocoding API. City not found!", city);
+            this.logger.LogInformation("Fetching '{City}' city from OpenMeteo Geocoding API. City not found!", city);
             return null;
         }
 

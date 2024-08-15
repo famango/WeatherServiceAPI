@@ -9,7 +9,7 @@ namespace WeatherServiceAPI.Services
     /// <summary>
     /// Interface IWeatherForecast.
     /// </summary>
-    public interface IWeatherForecast
+    public interface IWeatherForecastService
     {
         /// <summary>
         /// Async method to get <see cref="WeatherForecast"/> by Location.

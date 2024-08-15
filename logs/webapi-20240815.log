@@ -1,0 +1,111 @@
+2024-08-15 07:31:46.229 -06:00  INF  Now listening on: https://localhost:7082
+2024-08-15 07:31:46.412 -06:00  INF  Now listening on: http://localhost:5184
+2024-08-15 07:31:46.426 -06:00  INF  Application started. Press Ctrl+C to shut down.
+2024-08-15 07:31:46.427 -06:00  INF  Hosting environment: Development
+2024-08-15 07:31:46.428 -06:00  INF  Content root path: C:\Users\alvarado\Documents\GitHub\WeatherServiceAPI\WeatherServiceAPI\
+2024-08-15 07:32:27.742 -06:00  INF  Request starting HTTP/2 GET https://localhost:7082/swagger/index.html - -
+2024-08-15 07:32:30.480 -06:00  INF  Request finished HTTP/2 GET https://localhost:7082/swagger/index.html - - - 200 - text/html;charset=utf-8 2752.2898ms
+2024-08-15 07:32:30.680 -06:00  INF  Request starting HTTP/2 GET https://localhost:7082/_framework/aspnetcore-browser-refresh.js - -
+2024-08-15 07:32:30.752 -06:00  INF  Request finished HTTP/2 GET https://localhost:7082/_framework/aspnetcore-browser-refresh.js - - - 200 12366 application/javascript;+charset=utf-8 71.0740ms
+2024-08-15 07:32:30.933 -06:00  INF  Request starting HTTP/2 GET https://localhost:7082/_vs/browserLink - -
+2024-08-15 07:32:31.228 -06:00  INF  Request finished HTTP/2 GET https://localhost:7082/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 295.3411ms
+2024-08-15 07:32:31.377 -06:00  INF  Request starting HTTP/2 GET https://localhost:7082/swagger/v1/swagger.json - -
+2024-08-15 07:32:31.736 -06:00  INF  Request finished HTTP/2 GET https://localhost:7082/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 358.6094ms
+2024-08-15 07:32:43.781 -06:00  INF  Request starting HTTP/2 GET https://localhost:7082/api/weatherforecast/bycity?city=el%20paso - -
+2024-08-15 07:32:43.825 -06:00  INF  Executing endpoint 'WeatherServiceAPI.Controllers.WeatherForecastController.GetByCity (WeatherServiceAPI)'
+2024-08-15 07:32:44.148 -06:00  INF  Route matched with {action = "GetByCity", controller = "WeatherForecast"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCity(System.String) on controller WeatherServiceAPI.Controllers.WeatherForecastController (WeatherServiceAPI).
+2024-08-15 07:32:47.643 -06:00  INF  Processing request GetByCity for City:'el paso'.
+2024-08-15 07:32:47.670 -06:00  INF  Searching 'el paso' city in DB
+2024-08-15 07:32:48.962 -06:00  INF  Searching 'el paso' city in DB. City was found.
+2024-08-15 07:32:48.967 -06:00  INF  Searching location 31.75872, -106.48693 in DB (expiresInMinutes=60).
+2024-08-15 07:32:49.518 -06:00  INF  Searching location 31.75872, -106.48693 in DB (expiresInMinutes=60). Location not found or stale data.
+2024-08-15 07:32:49.518 -06:00  INF  Searching location 31.75872, -106.48693 in DB (expiresInMinutes=60). Location found.
+2024-08-15 07:32:49.675 -06:00  INF  Fetching coordinates 31.75872, -106.48693 from OpenMeteo API.
+2024-08-15 07:32:49.727 -06:00  INF  Start processing HTTP request GET "https://api.open-meteo.com/v1/forecast?latitude=31.75872&longitude=-106.48693&current=temperature_2m%2cwind_speed_10m%2cwind_direction_10m&daily=temperature_2m_max%2ctemperature_2m_min%2csunrise%2cwind_speed_10m_max%2cwind_direction_10m_dominant"
+2024-08-15 07:32:49.737 -06:00  INF  Sending HTTP request GET "https://api.open-meteo.com/v1/forecast?latitude=31.75872&longitude=-106.48693&current=temperature_2m%2cwind_speed_10m%2cwind_direction_10m&daily=temperature_2m_max%2ctemperature_2m_min%2csunrise%2cwind_speed_10m_max%2cwind_direction_10m_dominant"
+2024-08-15 07:32:50.476 -06:00  INF  Received HTTP response headers after 724.9461ms - 200
+2024-08-15 07:32:50.482 -06:00  INF  End processing HTTP request after 783.7201ms - 200
+2024-08-15 07:32:50.739 -06:00  INF  Fetching coordinates 31.75872, -106.48693 from OpenMeteo API. Location was found:WeatherServiceAPI.Models.WeatherForecast
+2024-08-15 07:32:50.742 -06:00  INF  Inserting new WeatherForecast record: WeatherServiceAPI.Models.WeatherForecast
+2024-08-15 07:32:51.787 -06:00  INF  Completed request GetByCity for City:'el paso'.
+2024-08-15 07:32:51.813 -06:00  INF  Executing OkObjectResult, writing value of type 'WeatherServiceAPI.Dtos.WeatherForecastDto'.
+2024-08-15 07:32:51.918 -06:00  INF  Executed action WeatherServiceAPI.Controllers.WeatherForecastController.GetByCity (WeatherServiceAPI) in 7753.2458ms
+2024-08-15 07:32:51.919 -06:00  INF  Executed endpoint 'WeatherServiceAPI.Controllers.WeatherForecastController.GetByCity (WeatherServiceAPI)'
+2024-08-15 07:32:51.930 -06:00  INF  Request finished HTTP/2 GET https://localhost:7082/api/weatherforecast/bycity?city=el%20paso - - - 200 - application/json;+charset=utf-8 8148.1246ms
+2024-08-15 08:25:55.741 -06:00  INF  Now listening on: https://localhost:7082
+2024-08-15 08:25:55.897 -06:00  INF  Now listening on: http://localhost:5184
+2024-08-15 08:25:55.917 -06:00  INF  Application started. Press Ctrl+C to shut down.
+2024-08-15 08:25:55.929 -06:00  INF  Hosting environment: Development
+2024-08-15 08:25:55.930 -06:00  INF  Content root path: C:\Users\alvarado\Documents\GitHub\WeatherServiceAPI\WeatherServiceAPI\
+2024-08-15 08:25:58.516 -06:00  INF  Request starting HTTP/2 GET https://localhost:7082/swagger/index.html - -
+2024-08-15 08:26:00.063 -06:00  INF  Request finished HTTP/2 GET https://localhost:7082/swagger/index.html - - - 200 - text/html;charset=utf-8 1566.0308ms
+2024-08-15 08:26:00.307 -06:00  INF  Request starting HTTP/2 GET https://localhost:7082/_framework/aspnetcore-browser-refresh.js - -
+2024-08-15 08:26:00.313 -06:00  INF  Request starting HTTP/2 GET https://localhost:7082/_vs/browserLink - -
+2024-08-15 08:26:00.333 -06:00  INF  Request finished HTTP/2 GET https://localhost:7082/_framework/aspnetcore-browser-refresh.js - - - 200 12366 application/javascript;+charset=utf-8 25.9645ms
+2024-08-15 08:26:00.521 -06:00  INF  Request finished HTTP/2 GET https://localhost:7082/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 208.4246ms
+2024-08-15 08:26:00.646 -06:00  INF  Request starting HTTP/2 GET https://localhost:7082/swagger/v1/swagger.json - -
+2024-08-15 08:26:01.106 -06:00  INF  Request finished HTTP/2 GET https://localhost:7082/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 460.7862ms
+2024-08-15 08:26:15.359 -06:00  INF  Request starting HTTP/2 GET https://localhost:7082/api/weatherforecast/bycity?city=El%20Paso - -
+2024-08-15 08:26:15.383 -06:00  INF  Executing endpoint 'WeatherServiceAPI.Controllers.WeatherForecastController.GetByCity (WeatherServiceAPI)'
+2024-08-15 08:26:15.534 -06:00  INF  Route matched with {action = "GetByCity", controller = "WeatherForecast"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCity(System.String) on controller WeatherServiceAPI.Controllers.WeatherForecastController (WeatherServiceAPI).
+2024-08-15 08:26:16.975 -06:00  INF  Processing request GetByCity for City:'El Paso'.
+2024-08-15 08:26:16.982 -06:00  INF  Searching 'El Paso' city in DB
+2024-08-15 08:26:18.228 -06:00  INF  Searching 'El Paso' city in DB. City was found.
+2024-08-15 08:26:18.235 -06:00  INF  Searching location 31.75872, -106.48693 in DB (expiresInMinutes=60).
+2024-08-15 08:26:18.493 -06:00  INF  Searching location 31.75872, -106.48693 in DB (expiresInMinutes=60). Location found.
+2024-08-15 08:26:18.493 -06:00  INF  Completed request GetByCity for City:'El Paso'.
+2024-08-15 08:26:18.537 -06:00  INF  Executing OkObjectResult, writing value of type 'WeatherServiceAPI.Dtos.WeatherForecastDto'.
+2024-08-15 08:26:18.603 -06:00  INF  Executed action WeatherServiceAPI.Controllers.WeatherForecastController.GetByCity (WeatherServiceAPI) in 3048.5792ms
+2024-08-15 08:26:18.609 -06:00  INF  Executed endpoint 'WeatherServiceAPI.Controllers.WeatherForecastController.GetByCity (WeatherServiceAPI)'
+2024-08-15 08:26:18.616 -06:00  INF  Request finished HTTP/2 GET https://localhost:7082/api/weatherforecast/bycity?city=El%20Paso - - - 200 - application/json;+charset=utf-8 3257.9935ms
+2024-08-15 09:08:14.883 -06:00  INF  Now listening on: https://localhost:7082
+2024-08-15 09:08:14.984 -06:00  INF  Now listening on: http://localhost:5184
+2024-08-15 09:08:15.001 -06:00  INF  Application started. Press Ctrl+C to shut down.
+2024-08-15 09:08:15.003 -06:00  INF  Hosting environment: Development
+2024-08-15 09:08:15.003 -06:00  INF  Content root path: C:\Users\alvarado\Documents\GitHub\WeatherServiceAPI\WeatherServiceAPI\
+2024-08-15 09:08:16.567 -06:00  INF  Request starting HTTP/2 GET https://localhost:7082/swagger/index.html - -
+2024-08-15 09:08:18.048 -06:00  INF  Request finished HTTP/2 GET https://localhost:7082/swagger/index.html - - - 200 - text/html;charset=utf-8 1493.7723ms
+2024-08-15 09:08:18.102 -06:00  INF  Request starting HTTP/2 GET https://localhost:7082/_vs/browserLink - -
+2024-08-15 09:08:18.102 -06:00  INF  Request starting HTTP/2 GET https://localhost:7082/_framework/aspnetcore-browser-refresh.js - -
+2024-08-15 09:08:18.113 -06:00  INF  Request finished HTTP/2 GET https://localhost:7082/_framework/aspnetcore-browser-refresh.js - - - 200 12366 application/javascript;+charset=utf-8 11.0762ms
+2024-08-15 09:08:18.288 -06:00  INF  Request finished HTTP/2 GET https://localhost:7082/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 185.3938ms
+2024-08-15 09:08:18.615 -06:00  INF  Request starting HTTP/2 GET https://localhost:7082/swagger/v1/swagger.json - -
+2024-08-15 09:08:19.071 -06:00  INF  Request finished HTTP/2 GET https://localhost:7082/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 455.9754ms
+2024-08-15 09:09:10.147 -06:00  INF  Request starting HTTP/2 GET https://localhost:7082/api/weatherforecast/bylocation?latitude=31.75872039794922&longitude=-106.48693084716797 - -
+2024-08-15 09:09:10.173 -06:00  INF  Executing endpoint 'WeatherServiceAPI.Controllers.WeatherForecastController.GetByLocation (WeatherServiceAPI)'
+2024-08-15 09:09:10.255 -06:00  INF  Route matched with {action = "GetByLocation", controller = "WeatherForecast"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByLocation(Single, Single) on controller WeatherServiceAPI.Controllers.WeatherForecastController (WeatherServiceAPI).
+2024-08-15 09:09:11.181 -06:00  INF  Processing request GetByLocation for Latitude:31.75872, and Longitude:-106.48693.
+2024-08-15 09:09:15.869 -06:00  INF  Searching location 31.75872, -106.48693 in DB (expiresInMinutes=60).
+2024-08-15 09:09:16.781 -06:00  INF  Searching location 31.75872, -106.48693 in DB (expiresInMinutes=60). Location not found or stale data.
+2024-08-15 09:09:16.781 -06:00  INF  Searching location 31.75872, -106.48693 in DB (expiresInMinutes=60). Location found.
+2024-08-15 09:09:16.797 -06:00  INF  Fetching coordinates 31.75872, -106.48693 from OpenMeteo API.
+2024-08-15 09:09:16.823 -06:00  INF  Start processing HTTP request GET "https://api.open-meteo.com/v1/forecast?latitude=31.75872&longitude=-106.48693&current=temperature_2m%2cwind_speed_10m%2cwind_direction_10m&daily=temperature_2m_max%2ctemperature_2m_min%2csunrise%2cwind_speed_10m_max%2cwind_direction_10m_dominant"
+2024-08-15 09:09:16.831 -06:00  INF  Sending HTTP request GET "https://api.open-meteo.com/v1/forecast?latitude=31.75872&longitude=-106.48693&current=temperature_2m%2cwind_speed_10m%2cwind_direction_10m&daily=temperature_2m_max%2ctemperature_2m_min%2csunrise%2cwind_speed_10m_max%2cwind_direction_10m_dominant"
+2024-08-15 09:09:17.491 -06:00  INF  Received HTTP response headers after 647.3269ms - 200
+2024-08-15 09:09:17.495 -06:00  INF  End processing HTTP request after 688.8296ms - 200
+2024-08-15 09:09:17.702 -06:00  INF  Fetching coordinates 31.75872, -106.48693 from OpenMeteo API. Location was found:WeatherServiceAPI.Models.WeatherForecast
+2024-08-15 09:09:17.704 -06:00  INF  Inserting new WeatherForecast record: WeatherServiceAPI.Models.WeatherForecast
+2024-08-15 09:11:19.853 -06:00  INF  Now listening on: https://localhost:7082
+2024-08-15 09:11:19.939 -06:00  INF  Now listening on: http://localhost:5184
+2024-08-15 09:11:19.968 -06:00  INF  Application started. Press Ctrl+C to shut down.
+2024-08-15 09:11:19.970 -06:00  INF  Hosting environment: Development
+2024-08-15 09:11:19.970 -06:00  INF  Content root path: C:\Users\alvarado\Documents\GitHub\WeatherServiceAPI\WeatherServiceAPI\
+2024-08-15 09:11:21.193 -06:00  INF  Request starting HTTP/2 GET https://localhost:7082/swagger/index.html - -
+2024-08-15 09:11:22.534 -06:00  INF  Request finished HTTP/2 GET https://localhost:7082/swagger/index.html - - - 200 - text/html;charset=utf-8 1355.2009ms
+2024-08-15 09:11:22.597 -06:00  INF  Request starting HTTP/2 GET https://localhost:7082/_framework/aspnetcore-browser-refresh.js - -
+2024-08-15 09:11:22.599 -06:00  INF  Request starting HTTP/2 GET https://localhost:7082/_vs/browserLink - -
+2024-08-15 09:11:22.609 -06:00  INF  Request finished HTTP/2 GET https://localhost:7082/_framework/aspnetcore-browser-refresh.js - - - 200 12366 application/javascript;+charset=utf-8 12.2320ms
+2024-08-15 09:11:22.809 -06:00  INF  Request finished HTTP/2 GET https://localhost:7082/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 209.5518ms
+2024-08-15 09:11:22.959 -06:00  INF  Request starting HTTP/2 GET https://localhost:7082/swagger/v1/swagger.json - -
+2024-08-15 09:11:23.357 -06:00  INF  Request finished HTTP/2 GET https://localhost:7082/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 397.9935ms
+2024-08-15 09:11:50.349 -06:00  INF  Request starting HTTP/2 GET https://localhost:7082/api/weatherforecast/bylocation?latitude=31.75872039794922&longitude=-106.48693084716797 - -
+2024-08-15 09:11:50.380 -06:00  INF  Executing endpoint 'WeatherServiceAPI.Controllers.WeatherForecastController.GetByLocation (WeatherServiceAPI)'
+2024-08-15 09:11:50.481 -06:00  INF  Route matched with {action = "GetByLocation", controller = "WeatherForecast"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByLocation(Single, Single) on controller WeatherServiceAPI.Controllers.WeatherForecastController (WeatherServiceAPI).
+2024-08-15 09:11:51.414 -06:00  INF  Processing request GetByLocation for Latitude:31.75872, and Longitude:-106.48693.
+2024-08-15 09:12:02.176 -06:00  INF  Searching location 31.75872, -106.48693 in DB (expiresInMinutes=60).
+2024-08-15 09:12:02.977 -06:00  INF  Searching location 31.75872, -106.48693 in DB (expiresInMinutes=60). Location found.
+2024-08-15 09:12:02.977 -06:00  INF  Completed request GetByLocation for Latitude:31.75872, and Longitude:-106.48693.
+2024-08-15 09:12:03.012 -06:00  INF  Executing OkObjectResult, writing value of type 'WeatherServiceAPI.Models.WeatherForecast'.
+2024-08-15 09:12:03.272 -06:00  INF  Executed action WeatherServiceAPI.Controllers.WeatherForecastController.GetByLocation (WeatherServiceAPI) in 12767.9704ms
+2024-08-15 09:12:03.280 -06:00  INF  Executed endpoint 'WeatherServiceAPI.Controllers.WeatherForecastController.GetByLocation (WeatherServiceAPI)'
+2024-08-15 09:12:03.289 -06:00  INF  Request finished HTTP/2 GET https://localhost:7082/api/weatherforecast/bylocation?latitude=31.75872039794922&longitude=-106.48693084716797 - - - 200 - application/json;+charset=utf-8 12940.2422ms

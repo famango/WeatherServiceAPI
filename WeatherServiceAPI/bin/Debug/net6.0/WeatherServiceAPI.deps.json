@@ -10,6 +10,8 @@
         "dependencies": {
           "MongoDB.Driver": "2.28.0",
           "Serilog.AspNetCore": "8.0.2",
+          "SonarAnalyzer.CSharp": "9.31.0.96804",
+          "StyleCop.Analyzers": "1.1.118",
           "Swashbuckle.AspNetCore": "6.5.0"
         },
         "runtime": {
@@ -397,6 +399,8 @@
           }
         }
       },
+      "SonarAnalyzer.CSharp/9.31.0.96804": {},
+      "StyleCop.Analyzers/1.1.118": {},
       "Swashbuckle.AspNetCore/6.5.0": {
         "dependencies": {
           "Microsoft.Extensions.ApiDescription.Server": "6.0.5",
@@ -740,6 +744,20 @@
       "sha512": "sha512-rFtK2KEI9hIe8gtx3a0YDXdHOpedIf9wYCEYtBEmtlyiWVX3XlCNV03JrmmAi/Cdfn7dxK+k0sjjcLv4fpHnqA==",
       "path": "snappier/1.0.0",
       "hashPath": "snappier.1.0.0.nupkg.sha512"
+    },
+    "SonarAnalyzer.CSharp/9.31.0.96804": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VsAT+UaPfkWsroyhMbh4cPvy8i6/uOJtBsr9tyyy2REKzibvU2yCXP3PiGaJNidPV0QdTYk7/PRzDE59IQnNRA==",
+      "path": "sonaranalyzer.csharp/9.31.0.96804",
+      "hashPath": "sonaranalyzer.csharp.9.31.0.96804.nupkg.sha512"
+    },
+    "StyleCop.Analyzers/1.1.118": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Onx6ovGSqXSK07n/0eM3ZusiNdB6cIlJdabQhWGgJp3Vooy9AaLS/tigeybOJAobqbtggTamoWndz72JscZBvw==",
+      "path": "stylecop.analyzers/1.1.118",
+      "hashPath": "stylecop.analyzers.1.1.118.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore/6.5.0": {
       "type": "package",

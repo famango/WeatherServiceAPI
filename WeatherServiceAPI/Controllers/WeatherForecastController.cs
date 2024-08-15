@@ -15,18 +15,18 @@ namespace WeatherServiceAPI.Controllers
     [Route("api/weatherforecast")]
     public class WeatherForecastController : Controller
     {
-        private readonly WeatherForecastService weatherForecastService;
+        private readonly IWeatherForecastService weatherForecastService;
         private readonly ILogger logger;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="WeatherForecastController"/> class.
         /// </summary>
         /// <param name="weatherForcastService">Service class for Weather Forecast.</param>
-        /// <param name="logger">Service claas for ILogger</param>
-        public WeatherForecastController(WeatherForecastService weatherForcastService, ILogger logger)
+        /// <param name="loggerFactory">Service class for Logging.</param>
+        public WeatherForecastController(IWeatherForecastService weatherForcastService, ILoggerFactory loggerFactory)
         {
             this.weatherForecastService = weatherForcastService;
-            this.logger = logger;
+            this.logger = loggerFactory.CreateLogger<WeatherForecastController>();
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace WeatherServiceAPI.Controllers
         [Route("bycity")]
         public async Task<IActionResult> GetByCity([FromQuery] string city)
         {
-            this.logger.LogInformation("Processing request GetByCity for City:{City} with error.", city);
+            this.logger.LogInformation("Processing request GetByCity for City:'{City}'.", city);
             bool isParsedSuccessfully = int.TryParse(city, out _);
 
             if (isParsedSuccessfully)
@@ -89,18 +89,18 @@ namespace WeatherServiceAPI.Controllers
 
             if (!this.ModelState.IsValid)
             {
-                this.logger.LogInformation("Completed request GetByCity for City:{City} with error.", city);
+                this.logger.LogInformation("Completed request GetByCity for City:'{City}' with error.", city);
                 return this.BadRequest(this.ModelState);
             }
 
             var result = await this.weatherForecastService.GetForecastByCityAsync(city.Trim());
             if (result == null)
             {
-                this.logger.LogInformation("Completed request GetByCity for City:{City}. City not found!", city);
+                this.logger.LogInformation("Completed request GetByCity for City:'{City}'. City not found!", city);
                 return this.NotFound();
             }
 
-            this.logger.LogInformation("Completed request GetByCity for City:{City}.", city);
+            this.logger.LogInformation("Completed request GetByCity for City:'{City}'.", city);
             return this.Ok(result.ToDto());
         }
     }

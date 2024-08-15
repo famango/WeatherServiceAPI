@@ -138,3 +138,4 @@ C:\Users\alvarado\Documents\GitHub\WeatherServiceAPI\WeatherServiceApi\obj\Debug
 C:\Users\alvarado\Documents\GitHub\WeatherServiceAPI\WeatherServiceApi\obj\Debug\net6.0\WeatherServiceAPI.pdb
 C:\Users\alvarado\Documents\GitHub\WeatherServiceAPI\WeatherServiceApi\obj\Debug\net6.0\WeatherServiceAPI.genruntimeconfig.cache
 C:\Users\alvarado\Documents\GitHub\WeatherServiceAPI\WeatherServiceApi\obj\Debug\net6.0\ref\WeatherServiceAPI.dll
+C:\Users\alvarado\Documents\GitHub\WeatherServiceAPI\WeatherServiceAPI\obj\Debug\net6.0\WeatherServiceAPI.sourcelink.json
